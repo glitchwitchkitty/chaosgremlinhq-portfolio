@@ -1,0 +1,232 @@
+:root{
+  --bg:#0b0f14;
+  --panel:#0f141b;
+  --text:#e6e9ef;
+  --muted:#9aa3af;
+  --line:#1e2633;
+  --accent:#7ee0ff;    /* cyan */
+  --accent-2:#b18cff;  /* violet */
+  --glow:0 0 18px rgba(126,224,255,.35);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:radial-gradient(1200px 600px at 10% -10%, rgba(126,224,255,.12), transparent 60%),
+             radial-gradient(900px 500px at 100% 10%, rgba(177,140,255,.10), transparent 55%),
+             var(--bg);
+  color:var(--text);
+  font:400 16px/1.65 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+.container{max-width:1000px;margin:0 auto;padding:0 20px}
+
+/* Header */
+.site-header{
+  position:sticky; top:0; z-index:40;
+  background:linear-gradient(to bottom, rgba(11,15,20,.8), rgba(11,15,20,.45) 60%, transparent);
+  backdrop-filter:saturate(120%) blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;min-height:64px}
+.brand{display:flex;align-items:center;gap:.6rem;color:var(--text);text-decoration:none}
+.brand-mark{color:var(--accent)}
+.brand-text{font-weight:800;letter-spacing:.4px}
+.site-nav{display:flex;gap:1rem}
+.site-nav a{color:var(--muted);text-decoration:none;padding:.5rem .6rem;border-radius:8px}
+.site-nav a:hover{color:var(--text);background:rgba(126,224,255,.07);box-shadow:var(--glow)}
+.nav-toggle{display:none;position:relative;width:40px;height:40px;background:transparent;border:1px solid var(--line);border-radius:10px}
+.nav-toggle-bar,.nav-toggle-bar::before,.nav-toggle-bar::after{
+  position:absolute;left:50%;transform:translateX(-50%);height:2px;width:20px;background:var(--text);content:"";
+}
+.nav-toggle-bar{top:50%}
+.nav-toggle-bar::before{top:-6px}
+.nav-toggle-bar::after{top:6px}
+.sr-only{position:absolute;clip:rect(1px,1px,1px,1px);padding:0;border:0;height:1px;width:1px;overflow:hidden}
+
+.brand-logo {
+  width: 28px;
+  height: 28px;
+  display: inline-block;
+  vertical-align: middle;
+  filter: brightness(0) invert(1); /* keeps it visible on dark bg */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.brand:hover .brand-logo {
+  transform: rotate(-10deg) scale(1.1);
+  filter: drop-shadow(0 0 6px var(--accent-2)) brightness(1.2);
+}
+
+
+/* Hero */
+.section{padding:72px 0;border-top:1px solid var(--line)}
+.hero{padding-top:120px}
+.title{
+  font:800 56px/1.1 Inter, sans-serif;
+  margin:0 0 10px;
+  letter-spacing:.3px;
+  text-shadow:0 0 0 rgba(0,0,0,0), 0 0 24px rgba(177,140,255,.25);
+}
+.subtitle{margin:0 0 8px;color:var(--muted)}
+.lead{font-size:1.125rem;max-width:720px}
+.muted{color:var(--muted)}
+.mono{font-family:"Space Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
+.neon{color:var(--accent);text-shadow:var(--glow)}
+.neon-soft{color:var(--accent-2);text-shadow:0 0 12px rgba(177,140,255,.35)}
+
+.cta-row{display:flex;gap:.75rem;margin-top:18px}
+.btn{display:inline-block;padding:.75rem 1rem;border-radius:12px;text-decoration:none;font-weight:600;border:1px solid var(--line)}
+.btn-primary{background:linear-gradient(135deg, rgba(126,224,255,.12), rgba(177,140,255,.12));color:var(--text);border-color:transparent;box-shadow:var(--glow)}
+.btn-primary:hover{background:linear-gradient(135deg, rgba(126,224,255,.18), rgba(177,140,255,.18))}
+.btn-ghost{color:var(--text);background:transparent}
+.btn-ghost:hover{background:rgba(126,224,255,.07)}
+
+/* Cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:18px;
+}
+.card-title{margin:0 0 6px;font:700 20px/1.3 Inter, sans-serif}
+.bullets{margin:10px 0 0 18px; padding:0}
+.bullets li{margin:4px 0;color:var(--muted)}
+
+/* Projects */
+.section-title{margin:0 0 6px;font:800 28px/1.25 Inter, sans-serif}
+.section-intro{color:var(--muted);margin:0 0 14px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.proj{
+  background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:14px;
+}
+.thumb{background:var(--panel);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden}
+.proj-title{margin:6px 0 4px}
+.proj-text{margin:0 0 8px;color:var(--muted)}
+.proj-link{color:var(--accent);text-decoration:none}
+.proj-link:hover{text-decoration:underline}
+
+/* SVG accents */
+.svg-bg{fill:#0f141b}
+.svg-bar{fill:rgba(126,224,255,.35)}
+.svg-card{fill:rgba(177,140,255,.25)}
+.svg-node{fill:rgba(126,224,255,.35)}
+.svg-line{stroke:rgba(177,140,255,.45);stroke-width:6}
+.svg-chip{fill:rgba(177,140,255,.25)}
+.svg-conn{fill:rgba(126,224,255,.55)}
+
+/* Contact (updated for consistent icon glow) */
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:10px;
+}
+
+.contact-card{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:20px;
+  text-decoration:none;
+  color:var(--text);
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-card:hover{
+  transform:scale(1.08);
+  box-shadow:var(--glow);
+}
+
+.contact-icon{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  padding:6px;
+  background:rgba(255,255,255,0.05); /* ensures visibility for white icons */
+  filter:brightness(0) invert(1);
+  transition:transform 0.25s ease, filter 0.25s ease, background 0.25s ease;
+}
+
+.contact-card:hover .contact-icon{
+  background:rgba(177,140,255,0.15);
+  filter:drop-shadow(0 0 8px var(--accent-2)) brightness(1.1);
+  transform:scale(1.08);
+}
+
+/* --- Contact icon visibility fix --- */
+
+/* 1) Make the base icon render exactly as in the SVG file */
+.contact-icon {
+  filter: none;                 /* stop inverting everything */
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: transform 0.25s ease, filter 0.25s ease, background 0.25s ease;
+  object-fit: contain;          /* keep aspect ratio tidy */
+  display: block;               /* avoid inline-img whitespace quirks */
+}
+
+/* 2) Only invert logos that are black-on-transparent by default */
+.contact-icon[src*="github"],
+.contact-icon[src*="github-icon"] {
+  filter: brightness(0) invert(1);
+}
+
+.contact-icon[src*="linkedin"],
+.contact-icon[src*="linkedin-icon"] {
+  filter: brightness(0) invert(1);
+}
+
+/* 3) Hover treatment (same glow for all) */
+.contact-card:hover .contact-icon {
+  background: rgba(177, 140, 255, 0.15);
+  filter: drop-shadow(0 0 8px var(--accent-2));
+  transform: scale(1.08);
+}
+
+.contact-caption {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-align: center;
+  transition: color 0.25s ease;
+}
+.contact-card:hover .contact-caption {
+  color: var(--accent-2);
+}
+
+
+/* Footer */
+.site-footer{border-top:1px solid var(--line);padding:26px 0}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+
+/* Responsive */
+@media (max-width:900px){
+  .cards,.grid,.contact-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .cards,.grid,.contact-grid{grid-template-columns:1fr}
+  .title{font-size:40px}
+  .site-nav{display:none;position:absolute;right:20px;top:64px;background:var(--panel);border:1px solid var(--line);border-radius:12px;flex-direction:column;gap:0}
+  .site-nav a{padding:.8rem 1rem;border-bottom:1px solid var(--line)}
+  .site-nav a:last-child{border-bottom:none}
+  .nav-toggle{display:inline-block}
+  .site-nav.open{display:flex;min-width:200px}
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+}

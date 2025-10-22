@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Day 1 · WhatsApp Group Engagement Analysis | Kat Magyar</title>
+  <link rel="stylesheet" href="pandas_style.css" />
+</head>
+<body>
+  <header class="wa-header">
+    <a href="../simple_base.html" class="back-link">← Back to Projects</a>
+    <h1>WhatsApp Group Engagement Analysis </h1>
+  </header>
+
+  <main class="wa-main">
+    <nav class="tabs">
+      <button class="tab active" data-tab="overview">Project Overview</button>
+      <button class="tab" data-tab="results">Results</button>
+      <button class="tab" data-tab="takeaway">Key Takeaways</button>
+    </nav>
+
+    <!-- PROJECT OVERVIEW -->
+    <section id="overview" class="tab-content active">
+      <div class="chat-bubble incoming">
+        <h2>Project Overview</h2>
+        <p>Thinking as a product analyst for WhatsApp, I explored group creation and engagement trends using Python and Pandas.</p>
+        <p>The objective: reveal how large group sizes impact engagement and inform new messaging features for large groups.</p>
+        <h3>Objectives</h3>
+        <ul>
+          <li>Identify the largest group size among newly created groups.</li>
+          <li>Calculate the typical group size for new groups.</li>
+          <li>Assess average engagement in large, newly created groups.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section id="results" class="tab-content">
+      <!-- Q1 -->
+      <div class="chat-bubble incoming">
+        <h3>Q1 – Largest WhatsApp Group Created in October 2024</h3>
+        <p><strong>Prompt:</strong> What is the maximum number of participants among WhatsApp groups created in October 2024?</p>
+        <p><strong>Input:</strong></p>
+<pre><code>dim_groups['created_date'] = pd.to_datetime(dim_groups['created_date'])
+october_2024 = dim_groups[
+    (dim_groups['created_date'].dt.year == 2024) &
+    (dim_groups['created_date'].dt.month == 10)
+]
+max_participants = october_2024['participant_count'].max()
+print(max_participants)
+</code></pre>
+        <p><strong>Output:</strong> <code>100</code></p>
+        <p><strong>Insight:</strong> The maximum group size shows WhatsApp's potential for large-scale community engagement, highlighting needs for moderation tools and robust notification management.</p>
+      </div>
+      <!-- Q2 -->
+      <div class="chat-bubble outgoing">
+        <h3>Q2 – Typical Group Size for New Groups</h3>
+        <p><strong>Prompt:</strong> What is the average number of participants in WhatsApp groups created in October 2024?</p>
+        <p><strong>Input:</strong></p>
+<pre><code>average_participants = october_2024['participant_count'].mean()
+print(average_participants)
+</code></pre>
+        <p><strong>Output:</strong> <code>58.75 participants</code></p>
+        <p><strong>Insight:</strong> Understanding the typical group size helps prioritize features that enhance communication and cohesion for most new groups, not just outliers.</p>
+      </div>
+      <!-- Q3 -->
+      <div class="chat-bubble incoming">
+        <h3>Q3 – Engagement in Large Newly Created Groups</h3>
+        <p><strong>Prompt:</strong> For WhatsApp groups with more than 50 participants created in October 2024, what is the average number of messages sent?</p>
+        <p><strong>Input:</strong></p>
+<pre><code>large_oct_2024 = october_2024[october_2024['participant_count'] > 50]
+avg_messages = large_oct_2024['total_messages'].mean()
+print(avg_messages)
+</code></pre>
+        <p><strong>Output:</strong> <code>430.0 messages</code></p>
+        <p><strong>Insight:</strong> Higher message volumes in large new groups signal that onboarding and engagement tools should scale with group size, supporting active communities from the start.</p>
+      </div>
+    </section>
+
+    <!-- KEY TAKEAWAYS -->
+    <section id="takeaway" class="tab-content">
+      <div class="chat-bubble outgoing">
+        <h2>Key Takeaways</h2>
+        <ul>
+          <li>Used Pandas for filtering, aggregation, and date handling.</li>
+          <li>Analyzed group creation and participation trends for product insights.</li>
+          <li>Assessed engagement patterns in large-scale group chats.</li>
+          <li>Demonstrated real-world analytics techniques for messaging platforms.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wa-footer">
+    <p>© <span id="year"></span> Chaos Gremlin HQ · Glitch Kitty</p>
+  </footer>
+
+  <script src="pandas_script.js"></script>
+</body>
+</html>

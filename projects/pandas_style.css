@@ -1,0 +1,69 @@
+:root{
+  --bg1:#0b141a;
+  --bg2:#1f2c22;
+  --sent:#31ac26;
+  --recv:#075E54;
+  --text:#e6f2ef;
+  --muted:#9aa3af;
+  --accent:#59c7e2;
+}
+
+body{
+  margin:0;
+  font-family:Inter,system-ui,sans-serif;
+  background:linear-gradient(180deg,var(--bg1),var(--bg2));
+  color:var(--text);
+  line-height:1.6;
+}
+
+/* header */
+.wa-header{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1rem 2rem;
+  background:rgba(11,20,26,0.85);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  position:sticky;top:0;z-index:10;
+}
+.back-link{color:var(--accent);text-decoration:none;font-weight:600}
+.back-link:hover{text-decoration:underline}
+
+/* tabs */
+.tabs{
+  display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  padding:.75rem;
+}
+.tab{
+  background:none;border:1px solid rgba(255,255,255,0.2);
+  color:var(--muted);padding:.5rem 1rem;border-radius:20px;
+  cursor:pointer;font-weight:600;transition:.3s;
+}
+.tab:hover{color:var(--text);border-color:var(--accent)}
+.tab.active{
+  background:linear-gradient(135deg,var(--recv),var(--sent));
+  color:var(--text);box-shadow:0 0 12px rgba(37,211,102,.4);
+}
+
+/* content sections */
+.tab-content{display:none;animation:fade .4s ease}
+.tab-content.active{display:block}
+
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.wa-main{max-width:900px;margin:2rem auto;padding:0 1rem}
+
+/* chat bubbles */
+.chat-bubble{
+  max-width:75%;padding:.8rem 1rem;margin:.5rem;
+  border-radius:14px;box-shadow:0 0 6px rgba(0,0,0,.3);
+}
+.incoming{background-color:var(--recv);color:var(--text);border-bottom-left-radius:0}
+.outgoing{background-color:var(--sent);color:#0b141a;border-bottom-right-radius:0;margin-left:auto}
+
+/* code & images */
+pre{background:rgba(0,0,0,.25);padding:1rem;border-radius:12px;overflow:auto}
+code{font-family:"Space Mono",monospace;color:var(--accent)}
+img{max-width:100%;border-radius:10px;display:block;margin:.5rem auto}
+
+/* footer */
+.wa-footer{text-align:center;padding:1.5rem 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.08)}

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kat Magyar · Portfolio</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Mono:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="simple_style.css" />
+</head>
+<body>
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Home">
+  <img src="assets/icons/brainslug.svg" alt="Chaos Gremlin HQ logo" class="brand-logo">
+  <span class="brand-text">Chaos Gremlin HQ</span>
+      </a>
+
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="siteNav">
+        <span class="nav-toggle-bar"></span>
+        <span class="sr-only">Menu</span>
+      </button>
+
+      <nav id="siteNav" class="site-nav">
+        <a href="#home">Home</a>
+        <a href="#services">What I Do</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <!-- Hero -->
+    <section class="section hero">
+      <div class="container">
+        <h1 class="title">Kat Magyar</h1>
+        <p class="subtitle">Data analyst & creative coder <span class="muted">aka</span> <strong class="mono neon">Glitch&nbsp;Kitty</strong>.</p>
+        <p class="lead">
+          I turn messy data into clear stories and build small, thoughtful tools that feel good to use.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-ghost" href="#contact">Contact</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section">
+      <div class="container">
+        <h2 class="section-title">What I Do</h2>
+
+        <div class="cards">
+          <article class="card">
+            <h3 class="card-title">Data Analytics</h3>
+            <p>I clean, explore, and visualize data so decisions are easier.</p>
+            <ul class="bullets">
+              <li>Dashboards and reports</li>
+              <li>Exploratory analysis & trends</li>
+              <li>Clear, plain-language summaries</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">Machine Learning</h3>
+            <p>I prototype models to solve practical problems and reveal patterns.</p>
+            <ul class="bullets">
+              <li>Classification & forecasting</li>
+              <li>Feature engineering</li>
+              <li>Transparent evaluation</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">Software Design</h3>
+            <p>I structure small apps and data pipelines that run cleanly and privately.</p>
+            <ul class="bullets">
+              <li>Modular, documented code</li>
+              <li>Privacy-first local tools</li>
+              <li>ETL and automation flow</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <p class="section-intro">A few favorites. Each link includes code and a short write-up.</p>
+
+        <div class="grid">
+
+          <article class="proj">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 400 200" role="img" aria-label="WhatsApp chat thumbnail">
+              <rect width="400" height="200" fill="#0b141a"/>
+              <!-- Chat bubbles -->
+              <rect x="40" y="50" width="200" height="36" rx="18" fill="#25D366"/>
+              <rect x="90" y="100" width="190" height="36" rx="18" fill="#075E54"/>
+              <rect x="140" y="150" width="120" height="36" rx="18" fill="#1f2c22"/>
+              </svg>
+            </div>
+            <h3 class="proj-title">Data Storytelling with Pandas</h3>
+            <p class="proj-text">Analyzed WhatsApp group data with Pandas to reveal the impact of group size on user engagement and messaging behavior. Delivered clear insights to guide product feature development.</p>
+            <a class="proj-link" href="/projects/pandas_day1_whatsapp.html" target="_blank" rel="noreferrer">View Here →</a>
+          </article>
+
+          <article class="proj">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 400 200" role="img" aria-label="Dashboard thumbnail">
+                <rect width="400" height="200" class="svg-bg"/>
+                <rect x="24" y="24" width="352" height="40" class="svg-bar"/>
+                <rect x="24" y="84" width="220" height="92" class="svg-card"/>
+                <rect x="256" y="84" width="120" height="92" class="svg-card"/>
+              </svg>
+            </div>
+            <h3 class="proj-title">Regression Model </h3>
+            <p class="proj-text">.... coming soon.</p>
+            <a class="proj-link" href="https://github.com/yourusername/interactive-dashboard" target="_blank" rel="noreferrer">View on GitHub →</a>
+          </article>
+
+          <article class="proj">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 400 200" role="img" aria-label="Dashboard thumbnail">
+                <rect width="400" height="200" class="svg-bg"/>
+                <rect x="24" y="24" width="352" height="40" class="svg-bar"/>
+                <rect x="24" y="84" width="220" height="92" class="svg-card"/>
+                <rect x="256" y="84" width="120" height="92" class="svg-card"/>
+              </svg>
+            </div>
+            <h3 class="proj-title">Data CLeaning</h3>
+            <p class="proj-text">.... coming soon.</p>
+            <a class="proj-link" href="https://github.com/yourusername/interactive-dashboard" target="_blank" rel="noreferrer">View on GitHub →</a>
+          </article>
+
+          <article class="proj">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 400 200" role="img" aria-label="Dashboard thumbnail">
+                <rect width="400" height="200" class="svg-bg"/>
+                <rect x="24" y="24" width="352" height="40" class="svg-bar"/>
+                <rect x="24" y="84" width="220" height="92" class="svg-card"/>
+                <rect x="256" y="84" width="120" height="92" class="svg-card"/>
+              </svg>
+            </div>
+            <h3 class="proj-title">Interactive Dashboard</h3>
+            <p class="proj-text">A fast, readable dashboard that surfaces the “so what” in minutes.... coming soon.</p>
+            <a class="proj-link" href="https://github.com/yourusername/interactive-dashboard" target="_blank" rel="noreferrer">View on GitHub →</a>
+          </article>
+
+          <article class="proj">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 400 200" role="img" aria-label="Model thumbnail">
+                <rect width="400" height="200" class="svg-bg"/>
+                <circle cx="120" cy="100" r="56" class="svg-node"/>
+                <circle cx="280" cy="70" r="36" class="svg-node"/>
+                <circle cx="280" cy="130" r="36" class="svg-node"/>
+                <line x1="170" y1="100" x2="244" y2="70" class="svg-line"/>
+                <line x1="170" y1="100" x2="244" y2="130" class="svg-line"/>
+              </svg>
+            </div>
+            <h3 class="proj-title">ML Classifier</h3>
+            <p class="proj-text">A small, well-documented model with real-world evaluation...... coming soon.</p>
+            <a class="proj-link" href="https://github.com/yourusername/ml-classifier" target="_blank" rel="noreferrer">View on GitHub →</a>
+          </article>
+
+          <article class="proj">
+            <div class="thumb" aria-hidden="true">
+              <svg viewBox="0 0 400 200" role="img" aria-label="Pipeline thumbnail">
+                <rect width="400" height="200" class="svg-bg"/>
+                <rect x="30" y="80" width="90" height="40" class="svg-chip"/>
+                <rect x="155" y="80" width="90" height="40" class="svg-chip"/>
+                <rect x="280" y="80" width="90" height="40" class="svg-chip"/>
+                <rect x="120" y="98" width="35" height="4" class="svg-conn"/>
+                <rect x="245" y="98" width="35" height="4" class="svg-conn"/>
+              </svg>
+            </div>
+            <h3 class="proj-title">Data Pipeline</h3>
+            <p class="proj-text">A tidy ETL flow with logs, tests, and clear docs..... coming soon.</p>
+            <a class="proj-link" href="https://github.com/yourusername/data-pipeline" target="_blank" rel="noreferrer">View on GitHub →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-grid">
+
+
+          <!-- email -->
+          <a class="contact-card" href="mailto:glitchkitty666@gmail.com" aria-label="Email Kat">
+        <img src="assets/icons/email.svg" alt="Email" class="contact-icon">
+        <p class="contact-caption">Get in touch</p>
+          </a>
+          <!-- github -->
+          <a class="contact-card" href="https://github.com/glitchwitchkitty" target="_blank" rel="noreferrer" aria-label="GitHub Profile">
+        <img src="assets/icons/github.svg" alt="GitHub" class="contact-icon">
+        <p class="contact-caption">See my code</p>
+          </a>
+
+          <!-- linkedin -->
+          <a class="contact-card" href="https://www.linkedin.com/in/glitchkitty" target="_blank" rel="noreferrer" aria-label="LinkedIn Profile">
+        <img src="assets/icons/linkedin.svg" alt="LinkedIn" class="contact-icon">
+        <p class="contact-caption">Let's connect</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Chaos Gremlin HQ</span>
+      <span class="mono neon-soft">crafted with clarity</span>
+    </div>
+  </footer>
+
+  <script src="simple_script.js"></script>
+</body>
+</html>
